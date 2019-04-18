@@ -1,2 +1,2 @@
 # react-simple-treeview
-Simple treeview component for React
+Simple treeview component for React.

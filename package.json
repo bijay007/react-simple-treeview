@@ -1,0 +1,14 @@
+{
+  "name": "react-simple-treeview",
+  "version": "1.0.0",
+  "description": "Simple treeview component for React",
+  "main": "index.js",
+  "repository": "https://github.com/bijay007/react-simple-treeview.git",
+  "keywords": [
+    "child-nodes",
+    "style-props",
+    "recursion"
+  ],
+  "author": "Bijay Timilsina <bjtimi.007@gmail.com>",
+  "license": "ISC"
+}
