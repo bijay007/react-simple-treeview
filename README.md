@@ -4,9 +4,6 @@ Simple treeview component for React.
 ```
 npm i --save react-simple-treeview
 
-OR
-
-yarn add react-simple-treeview (...in the future)
 ```
 
 #### Using the component.
@@ -38,11 +35,12 @@ const styles = {
 }
 
 <NestedList list={data} styles={styles} />
+
 ```
 
 #### Component props
 
 | props | default | desc
 |------|------|------
-|data| null| array of objects to expand. It must have the same format as in the example
-|styles| {} | styles to be applied to list container (listWrapper) and items (listItem)(see example)
+|data| [ ]| Array of objects to render as an expandable tree. Initial data passed must have the same format as in the example (`title` for list items name and `data` for the expandable list)
+|styles| { } | Styles to be applied to list container (`listWrapper`) and items (`listItem`)
