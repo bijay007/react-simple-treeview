@@ -42,5 +42,5 @@ const styles = {
 
 | props | default | desc
 |------|------|------
-|data| [ ]| Array of objects to render as an expandable tree. Initial data passed must have the same format as in the example (`title` for list items name and `data` for the expandable list)
+|list| [ ]| Array of objects to render as an expandable tree. Initial list data passed must have the same format as in the example (`title` for list items name and `data` for the inner expandable list)
 |styles| { } | Styles to be applied to list container (`listWrapper`) and items (`listItem`)
