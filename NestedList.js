@@ -14,7 +14,8 @@ class NestedList extends Component {
     if (list.length) {
       let childrenWithHandlers = list.map((item, index) => {
         return (
-          <NestedListItem key={index}
+          <NestedListItem
+            key={index}
             data={item}
             createChildrenNodes={this.createChildrenNodes}
             styles={this.props.styles}

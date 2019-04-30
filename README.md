@@ -3,7 +3,6 @@ Simple treeview component for React.
 
 ```
 npm i --save react-simple-treeview
-
 ```
 
 #### Using the component.
@@ -24,17 +23,18 @@ const data = [
   }
 ];
 
-const styles = {
+const listStyle = {
   listWrapper: {
-    border: '1px solid red',
-    backgroundColor: 'gray'
+    border: '2px solid grey'
   },
   listItem: {
-    padding: '10px'
+    padding: '2px',
+    fontWeight: 'bold',
+    color: 'red'
   }
 }
 
-<NestedList list={data} styles={styles} />
+<NestedList list={data} styles={{...listStyle}} />
 
 ```
 

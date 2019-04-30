@@ -21,7 +21,7 @@ export default class NestedListItem extends Component {
             <span>{data.title ? data.title : `-`}</span>
             {
               data.data
-              ? <span>{this.state.collapsed ? ' + ' : ' - '}</span>
+              ? <span style={{cursor: 'pointer'}}>{this.state.collapsed ? ' + ' : ' - '}</span>
               : null
             }
           </div>
