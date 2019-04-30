@@ -1,6 +1,6 @@
 {
   "name": "react-simple-treeview",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple treeview component for React",
   "main": "index.js",
   "repository": "https://github.com/bijay007/react-simple-treeview.git",
