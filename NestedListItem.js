@@ -6,32 +6,34 @@ export default class NestedListItem extends Component {
     this.state = {
       collapsed: true
     }
-    // reusing this parent method signature for recursive component creation
-    this.createChildrenNodes = this.props.createChildrenNodes.bind(this);
   }
 
   clickHandler = () => this.setState({ collapsed: !this.state.collapsed })
 
   render() {
-    const { data, styles } = this.props;
+    const { data, styles, leftOffset, isFirstRender, createChildrenNodes } = this.props;
+    const paddingLeft = isFirstRender ? '0px' : `${leftOffset}px`;
+    // we merge the base styles with increased left padding
+    let newStyles = Object.assign({}, styles.listItem, { paddingLeft });
     return (
       <React.Fragment>
-        <div style={styles.listItem || {}} onClick={() => this.clickHandler()}>
-          <div>
-            <span>{data.title ? data.title : `-`}</span>
+        <div style={newStyles || {}} onClick={() => this.clickHandler()}>
+            <div>{data.title ? data.title : `No Title`}</div>
             {
-              data.data
-              ? <span style={{cursor: 'pointer'}}>{this.state.collapsed ? ' + ' : ' - '}</span>
-              : null
+              data.data &&
+              <span style={{cursor: 'pointer'}}>
+                {
+                  this.state.collapsed
+                  ? '+'
+                  : '-'
+                }
+              </span>
             }
           </div>
-        </div>
         <div>
         {
-          this.state.collapsed
-          ? null
-          : data.data
-            ? this.createChildrenNodes(data.data)
+          !this.state.collapsed && data.data
+            ? createChildrenNodes(data.data, 2 * leftOffset) // we double left padding on every recursion/depth
             : null
         }
         </div>

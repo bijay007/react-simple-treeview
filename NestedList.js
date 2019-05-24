@@ -10,7 +10,7 @@ class NestedList extends Component {
     }
   }
 
-  createChildrenNodes = list => {
+  createChildrenNodes = (list, paddingLeft) => {
     if (list.length) {
       let childrenWithHandlers = list.map((item, index) => {
         return (
@@ -19,6 +19,8 @@ class NestedList extends Component {
             data={item}
             createChildrenNodes={this.createChildrenNodes}
             styles={this.props.styles}
+            leftOffset={paddingLeft || this.props.leftOffset}
+            isFirstRender={!paddingLeft ? true : false} // TODO: make more usuage of this logic or try to remove it
           />
         )
       })
