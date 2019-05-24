@@ -4,7 +4,7 @@ Super minimal treeview react component build with flexibility in mind and 0 exte
 npm i --save react-simple-treeview
 ```
 
-#### Using the component.
+### Using the component.
 
 ```javascript
 import NestedList from 'react-simple-treeview';
@@ -59,10 +59,10 @@ const listStyle = {
 
 <NestedList list={data} leftOffset={5} styles={{...listStyle}} />
 ```
-#### How it looks
+### How it looks
 ![Above Example](./example-result.png)
 
-#### Component props
+### Component props
 
 | props | default | desc
 |------|------|------
