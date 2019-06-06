@@ -1,16 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NestedListItem from './NestedListItem';
 
-class NestedList extends Component {
+const NestedList = (props) => {
+  const { list, styles } = props;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: [...Array(this.props.list.length).keys()].map(() => true) // all root trees collpased by default
-    }
-  }
-
-  createChildrenNodes = (list, paddingLeft) => {
+  const createChildrenNodes = (list, paddingLeft) => {
     if (list.length) {
       let childrenWithHandlers = list.map((item, index) => {
         return (
@@ -20,24 +14,20 @@ class NestedList extends Component {
             createChildrenNodes={this.createChildrenNodes}
             styles={this.props.styles}
             leftOffset={paddingLeft || this.props.leftOffset}
-            isFirstRender={!paddingLeft ? true : false} // TODO: make more usuage of this logic or try to remove it
+            isFirstRender={!paddingLeft ? true : false} // TODO: make better usage of this logic or remove it
           />
         )
       })
       return childrenWithHandlers;
     }
   }
-
-  render() {
-    const { list, styles } = this.props;
-    return (
-      <div style={styles.listWrapper || {}}>
-        {
-          this.createChildrenNodes(list)
-        }
-      </div>
-    )
-  }
+  return (
+    <div style={styles.listWrapper || {}}>
+      {
+        createChildrenNodes(list)
+      }
+    </div>
+  )
 }
 
 export default NestedList;
